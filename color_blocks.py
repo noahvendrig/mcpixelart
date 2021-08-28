@@ -41,28 +41,29 @@ def Find_Colour_Match(pxColour, DATA_CSV=DATA_CSV):
 # print(cd)
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------
-boxLength = 4
+boxLength = 16
 boxSize = boxLength* boxLength
 
 # Open Paddington and make sure he is RGB - not palette
-IMG_NAME = '4.jpg'
+IMG_NAME = '2.jpg'
 im = Image.open(f"input/{IMG_NAME}").convert('RGB')
 width, height = im.size
 
-if width > 1000 or height > 1000:
-    w2 = int(width/8)
-    h2 = int(height/8)
-    im = im.resize((w2,h2))
-    width, height = im.size
+# if width < 1000 or height < 1000:
+#     w2 = int(width/8)
+#     h2 = int(height/8)
+#     im = im.resize((w2,h2))
+#     width, height = im.size
+
 
 colours = []
 
-def adjustSize(dimension, base=boxSize):
+def adjustSize(dimension, base=boxLength):
     return base * round(float(dimension) / base)
 width = (adjustSize(width)) #* 16
 height = (adjustSize(height)) #* 16
 
-im.resize((width,height))
+im = im.resize((width,height))
 
 new = Image.new("RGB", (width, height),(255, 255, 255))
 
@@ -72,13 +73,14 @@ boxPoints = []
 
 wScale = 2
 
-for x in range(0, width-(boxLength), boxLength):
+for x in range(0, width, boxLength):
     
-    for y in range(0, height-(wScale*boxLength), boxLength):
+    for y in range(0, height, boxLength):
         origin = (x,y)
         boxPoints.append(origin)
 
-print(boxPoints[-4:])
+# print(boxPoints[-4:])
+# print(im.getpixel((0,216)))
 
 for pt in boxPoints:
     # print(pt)
@@ -89,11 +91,13 @@ for pt in boxPoints:
     ave_r = 0
     ave_g = 0
     ave_b = 0
-    for px in range(x-1,x+3):
-        for py in range(y-1, y+3):
-            # print(pt, "d:",px,py)
+    for px in range(x,x+boxLength):
+        for py in range(y, y+boxLength):
+            
+            # print(pt, "d:",px,py, width, height)
             colours.append(im.getpixel((px,py)))
             # print(px,py)
+            
     for rgb in colours:
         ave_r += rgb[0]
         ave_g += rgb[1]
@@ -110,8 +114,10 @@ for pt in boxPoints:
     currBlockImg = Image.open(matchImgPath).convert('RGB')
     currColour = None
 
-    for px in range(x-1,x+3): # Change the colour to the average
-        for py in range(y-1, y+3):
+    # new[y:y+16, x:x+16] = currBlockImg
+
+    for px in range(x,x+boxLength): # Change the colour to the average
+        for py in range(y, y+boxLength):
             currColour = currBlockImg.getpixel((px-x,py-y))
             new.putpixel((px,py), currColour) 
 
@@ -134,7 +140,7 @@ for pt in boxPoints:
 # for x in range(pt[0], pt[0]+boxLength):
 #     for y in range(pt[1], pt[1]+boxLength):
 #         im.putpixel((x,y), avgRGB)
-new = new.resize((width*10,height*10))
+# new = new.resize((width*8,height*8))
 
 dir = os.listdir("./output")
 

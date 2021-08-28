@@ -41,10 +41,13 @@
 # d = ["output1.png","output2.png","output3.png","output4.png"]
 # print(max(d))
 
-from PIL import Image
-im = Image.open(f"input/4.jpg").convert('RGB')
-w,h = im.size
-w = w/8
-h = h/8
-im = im.resize()
-new = new.save(f"./output/{IMG_NAME}")
+# from PIL import Image
+# im = Image.open(f"input/4.jpg").convert('RGB')
+# w,h = im.size
+# w = w/8
+# h = h/8
+# im = im.resize()
+# new = new.save(f"./output/{IMG_NAME}")
+
+for i in range(0,4):
+    print(i)
