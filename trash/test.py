@@ -1,53 +1,44 @@
+# import argparse
 
-# # f = open("list.txt", "r")
-# # lines = f.readlines()
-# # res=[]
+# parser = argparse.ArgumentParser()
 
-# # for line in lines: 
-# #     line = line.split()
-# #     line_content = []
-# #     for word in line:
-# #         if not any(letter for letter in word if letter.islower()): # append the word to the list if it doesn't have any capital letters
-# #             line_content.append(word)
-# #     res.append(line_content)
+# parser.add_argument('-s', action='store', dest='simple_value',
+#                     help='Store a simple value')
 
-# # # print(res)
-# # with open('output.txt', 'w') as f:
-# #     f.write("%s\n" % res)
+# parser.add_argument('-c', action='store_const', dest='constant_value',
+#                     const='value-to-store',
+#                     help='Store a constant value')
 
-# # d="wool_colored_yellow"
-# # n = d.split("_")
-# # n = n[2]+"_"+n[0]
-# # print(n)
-# x= 255
-# def myround(x, base=16):
-#     return base * round(float(x) / base)
+# parser.add_argument('-t', action='store_true', default=False,
+#                     dest='boolean_switch',
+#                     help='Set a switch to true')
+# parser.add_argument('-f', action='store_false', default=False,
+#                     dest='boolean_switch',
+#                     help='Set a switch to false')
 
-# print(myround(x))
+# parser.add_argument('-a', action='append', dest='collection',
+#                     default=[],
+#                     help='Add repeated values to a list',
+#                     )
 
-# from PIL import Image
-# im = Image.open('img/birch_trapdoor.png').convert('RGB')
-# w,h = im.size
-# for x in range(w):
-#     for y in range(h):
-#         r,g,b = im.getpixel((x,y))
+# parser.add_argument('-A', action='append_const', dest='const_collection',
+#                     const='value-1-to-append',
+#                     default=[],
+#                     help='Add different values to list')
+# parser.add_argument('-B', action='append_const', dest='const_collection',
+#                     const='value-2-to-append',
+#                     help='Add different values to list')
 
-# im.show()
+# parser.add_argument('--version', action='version', version='%(prog)s 1.0')
 
-# for px in range(x+1,x+4):
-#             for py in range(y+1, y+4):
-#                 new.putpixel((px,py), (255,0,255))
-
-# d = ["output1.png","output2.png","output3.png","output4.png"]
-# print(max(d))
-
-# from PIL import Image
-# im = Image.open(f"input/4.jpg").convert('RGB')
-# w,h = im.size
-# w = w/8
-# h = h/8
-# im = im.resize()
-# new = new.save(f"./output/{IMG_NAME}")
-
-for i in range(0,4):
-    print(i)
+# results = parser.parse_args()
+# print ('simple_value     =', results.simple_value)
+# print ('constant_value   =', results.constant_val)
+# print ('boolean_switch   =', results.boolean_swit)
+# print ('collection       =', results.collection)
+# print ('const_collection =', results.const_collec)
+import random
+import string
+size = 6
+d = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(6))
+print(d)
