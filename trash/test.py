@@ -37,8 +37,24 @@
 # print ('boolean_switch   =', results.boolean_swit)
 # print ('collection       =', results.collection)
 # print ('const_collection =', results.const_collec)
-import random
-import string
-size = 6
-d = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(6))
-print(d)
+# import random
+# import string
+# size = 6
+# d = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(6))
+# print(d)
+
+# import pandas as pd
+# import mah
+# import PIL
+# from PIL import Image
+# import os
+# import tqdm
+# import sys
+# import argparse
+# import random
+# import string
+
+# print(pd.__version__)
+# print(PIL.__version__)
+# print(tqdm.__version__)t
+

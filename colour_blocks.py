@@ -1,8 +1,16 @@
+__author__ = 'Noah Vendrig'
+__license__ = 'MIT'  # copy of the license available @ https://prodicus.mit-license.org/
+__version__ = '1.2'
+__email__ = 'noahvendrig@gmail.com'
+__github__ = "github.com/noahvendrig"  # @noahvendrig
+__date__ = '30/07/2021'
+__description__ = '\'Samson\' is a Modern Recreation of text-based adventure game Hunt the Wumpus (1973)'
+__info__ = "info available at: https://github.com/noahvendrig/colour-blocks/blob/main/README.md"  # some info available here
+
+
 import pandas as pd
-import cv2
 import math
 from PIL import Image
-import numpy as np
 import os
 from tqdm import tqdm
 import sys
