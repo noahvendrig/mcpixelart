@@ -19,6 +19,7 @@ parser.add_argument('-img', metavar="img", default="1.png", nargs="?", type=str,
 parser.add_argument('-width', metavar="width", nargs="?", type=int, help="Specify the new width for the pixel art image. By default it will be 2000 and the height will be adjusted to keep aspect ratio")
 parser.add_argument('-s',action='store_true', help="Specify whether the pixel art image will be displayed")
 parser.add_argument('-height', metavar="height", nargs="?", type=str, help="Specify the new height for the pixel art image (only if you want specific height). If you use this in conjuction with -width then this arg will be ignored.")
+parser.add_argument('--version', action='version', version='%(prog)s 1.2')
 results = parser.parse_args()
 
 # print('img     = {!r}'.format(results.img))
