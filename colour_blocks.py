@@ -1,12 +1,24 @@
 __author__ = 'Noah Vendrig'
 __license__ = 'MIT'  # copy of the license available @ https://prodicus.mit-license.org/
-__version__ = '1.2'
+__version__ = '1.1'
 __email__ = 'noahvendrig@gmail.com'
 __github__ = "github.com/noahvendrig"  # @noahvendrig
-__date__ = '30/07/2021'
-__description__ = '\'Samson\' is a Modern Recreation of text-based adventure game Hunt the Wumpus (1973)'
-# some info available here
+__date__ = '09/09/2021'
+__description__ = 'Turns any image into its minecraft pixel art'
+__pyver__ = '3.8.10'
 __info__ = "info available at: https://github.com/noahvendrig/colour-blocks/blob/main/README.md"
+
+print("\n")
+print('Author: ' + __author__)
+print('License: ' + __license__)
+print('Version: ' + __version__)
+print('Email: ' + __email__)
+print('Github: ' + __github__)
+print('Date: ' + __date__)
+print('Description: ' + __description__)
+print(__info__)
+print("Python " + __pyver__)
+print('# ' + '=' * 78)
 
 
 import pandas as pd
@@ -171,7 +183,11 @@ dir = os.listdir("./output")
 
 resName = ''.join(random.choice(string.ascii_uppercase + string.digits)
                   for _ in range(10))
-new = new.save(f"./output/{resName}.png")
+
+savedPath = f"./output/{resName}.png"
+new = new.save(savedPath)
+
+print(f"Pixel Art Saved At {savedPath}")
 
 if showPixelArt:
     new.show()
