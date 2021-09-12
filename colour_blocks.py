@@ -90,11 +90,8 @@ def Find_Colour_Match(pxColour, DATA_CSV=DATA_CSV):
     return indexMatch
 
 
-# ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 boxLength = 16
 boxSize = boxLength * boxLength
-
-# Open Paddington and make sure he is RGB - not palette
 
 im = Image.open(img_path).convert('RGB')
 width, height = im.size
