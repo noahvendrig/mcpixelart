@@ -63,7 +63,7 @@ if results.img != None:
 if "/" not in img_path or "\\" not in img_path:
     img_path = "input/" + img_path
 
-print(f"{img_path = }")
+print(f"{img_path }")
 
 DATA_CSV = pd.read_csv('data.csv')
 # print(DATA_CSV)
