@@ -43,6 +43,8 @@ parser.add_argument('-width', metavar="width", nargs="?", type=int,
                     help="Specify the new width for the pixel art image. By default it will be 2000 and the height will be adjusted to keep aspect ratio")
 parser.add_argument('-s', action='store_true',
                     help="Specify whether the pixel art image will be displayed")
+parser.add_argument('-v', action='store_true',
+                    help="Specify if you would like to process a video instead of an image.")
 parser.add_argument('-height', metavar="height", nargs="?", type=str,
                     help="Specify the new height for the pixel art image (only if you want specific height). If you use this in conjuction with -width then this arg will be ignored.")
 parser.add_argument('--version', action='version', version='%(prog)s 1.2')
@@ -61,7 +63,7 @@ if results.img != None:
 if "/" not in img_path or "\\" not in img_path:
     img_path = "input/" + img_path
 
-print(f"{img_path = }")
+print(f"{img_path }")
 
 DATA_CSV = pd.read_csv('data.csv')
 # print(DATA_CSV)
