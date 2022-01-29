@@ -1,4 +1,4 @@
-# Colour Blocks
+# Minecraft Pixel Art Generator
 
 
 ## Description
@@ -21,16 +21,16 @@ TQDM Version >= 4.62.2
 
 #### Creating a new Anaconda enviroment
 ``` bash
-conda create --name colour-blocks python=3.8.1
+conda create --name mcpixelart python=3.8.1
 ```
 #### Activating the Anaconda Environment
 ###### Windows: 
 ```
-conda activate colour-blocks
+conda activate mcpixelart
 ``` 
 ###### Linux / macOS: 
 ```
-conda source activate colour-blocks
+conda source activate mcpixelart
 ```
 
 #### Package Installation
@@ -44,15 +44,15 @@ pip install package==version
 Enter the following into the terminal or Anaconda prompt to run the script:
 ###### Windows
 ``` bash
-python colour-blocks.py
+python main.py
 ```
 ###### Linux / macOs
 ``` bash
-python3 colour-blocks.py
+python3 main.py
 ```
 ##### Optional Arguments
 ``` bash
-usage: colour_blocks.py [-h] [-img [img]] [-width [width]] [-s] [-height [height]] [--version]
+usage: main.py [-h] [-img [img]] [-width [width]] [-s] [-height [height]] [--version]
 optional arguments:
   -h, --help        show this help message and exit
   -img [img]        Specify the path for the image to be turned into pixel art
